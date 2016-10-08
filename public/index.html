@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link
+			rel="stylesheet"
+			href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://code.angularjs.org/1.5.7/angular.js"></script>
+		<script src="https://code.angularjs.org/1.5.7/angular-route.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.js"></script>
+		<script src="script.js"></script>
+		<script src="js/project_list_controller.js"></script>
+		<script src="js/login_controller.js"></script>
+		<script src="js/registration_controller.js"></script>
+		<script src="js/projects_directive.js"></script>
+		<script src="js/tasks_directive.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div class="headed">
+			<h4>SIMPLE TODO LISTS</h4>
+			<h5>FROM RUBY GARAGE</h5>
+		</div>
+		<div ng-controller="mainController">
+			<div ng-view></div>
+		</div>
+		<div id="footer" class="footered">&copy;Ruby Garage</div>
+	</body>
+</html>
+<!--
+-дедлайн
+-навести порядок
+-->

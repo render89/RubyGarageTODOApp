@@ -1,0 +1,39 @@
+<td class="col-xs-2">
+	<input type="checkbox" ng-model="task.task_status">
+</td>
+<td class="col-xs-8">
+	<span
+		ng-class="{hidden: task.nameEditable}"
+		ng-click="changeTaskName(task)">
+		{{task.task_name}}
+	</span>
+	<input
+		ng-keypress="saveTaskName($event, task)"
+		type="text" 
+		ng-model="task.task_name"
+		ng-class="{visible: task.nameEditable,'edit-name':true}">
+	<input class="pull-right" type="date" ng-model="task.deadline">
+</td>
+<td class="col-xs-2">
+	<div class="priority">
+		<span
+			ng-class="{hidden: task.task_priority,'glyphicon glyphicon-star-empty':true}"
+			ng-click="changeTaskPriority(task)">
+		</span>
+		<span
+			ng-class="{visible: task.task_priority,'glyphicon glyphicon-star':true, 'edit-priority':true}"
+			ng-click="changeTaskPriority(task)">
+		</span>
+	</div>
+	</div>
+	<div class="task-icon-edit">
+		<span
+			class="glyphicon glyphicon-pencil" 
+			ng-click="changeTaskName(task)">
+		</span>
+		<span
+			class="glyphicon glyphicon-trash"
+			ng-click="deleteTask(task)">
+		</span>
+	</div>
+</td>

@@ -1,0 +1,115 @@
+/* Styles go here */
+body{
+	height: 100%;
+	background-color: transparent;
+	padding-top: 50px;
+}
+html{
+  background: rgb(50,52,49);
+  background: -moz-linear-gradient(top, rgb(50,52,49) 0%, rgb(51,49,54) 0%,rgb(54,50,49) 0%, rgb(54,52,40) 0%, rgb(207,205,180) 1%, rgb(210,208,170) 1%, rgb(211,208,163) 1%, rgb(210,206,171) 1%, rgb(210,206,168) 1%, rgb(208,206,167) 5%, rgb(207,204,171) 6%, rgb(207,204,169) 8%, rgb(207,203,174) 9%, rgb(207,203,176) 12%, rgb(209,205,180) 13%, rgb(208,204,179) 14%, rgb(205,203,178) 14%, rgb(206,204,181) 16%, rgb(204,202,179) 18%, rgb(195,195,171) 22%, rgb(192,192,168) 25%, rgb(189,191,167) 25%, rgb(187,189,165) 28%, rgb(186,191,171) 34%, rgb(187,191,174) 34%, rgb(190,194,177) 37%, rgb(191,195,172) 40%, rgb(192,193,161) 42%, rgb(195,195,161) 42%, rgb(199,189,130) 44%, rgb(208,172,60) 48%, rgb(208,172,60) 49%, rgb(209,166,38) 50%, rgb(209,160,23) 52%, rgb(212,159,21) 53%, rgb(211,155,16) 54%, rgb(209,145,13) 59%, rgb(208,138,16) 61%, rgb(206,136,12) 62%, rgb(207,137,15) 62%, rgb(205,128,14) 68%, rgb(205,127,18) 70%, rgb(202,124,15) 70%, rgb(201,123,15) 72%, rgb(202,123,20) 73%, rgb(195,115,18) 79%, rgb(194,113,21) 79%, rgb(194,114,19) 80%, rgb(188,107,16) 84%, rgb(188,107,16) 89%, rgb(185,104,13) 91%, rgb(187,103,15) 91%, rgb(185,101,13) 92%, rgb(181,94,14) 94%, rgb(176,89,10) 96%, rgb(175,84,13) 97%, rgb(173,82,11) 99%, rgb(171,84,15) 99%, rgb(170,83,12) 99%, rgb(176,84,11) 99%, rgb(173,81,8) 99%, rgb(172,84,13) 99%, rgb(152,86,34) 99%, rgb(68,47,30) 100%, rgb(50,50,50) 100%, rgb(54,50,49) 100%);
+  background: -webkit-linear-gradient(top, rgb(50,52,49) 0%,rgb(51,49,54) 0%,rgb(54,50,49) 0%,rgb(54,52,40) 0%,rgb(207,205,180) 1%,rgb(210,208,170) 1%,rgb(211,208,163) 1%,rgb(210,206,171) 1%,rgb(210,206,168) 1%,rgb(208,206,167) 5%,rgb(207,204,171) 6%,rgb(207,204,169) 8%,rgb(207,203,174) 9%,rgb(207,203,176) 12%,rgb(209,205,180) 13%,rgb(208,204,179) 14%,rgb(205,203,178) 14%,rgb(206,204,181) 16%,rgb(204,202,179) 18%,rgb(195,195,171) 22%,rgb(192,192,168) 25%,rgb(189,191,167) 25%,rgb(187,189,165) 28%,rgb(186,191,171) 34%,rgb(187,191,174) 34%,rgb(190,194,177) 37%,rgb(191,195,172) 40%,rgb(192,193,161) 42%,rgb(195,195,161) 42%,rgb(199,189,130) 44%,rgb(208,172,60) 48%,rgb(208,172,60) 49%,rgb(209,166,38) 50%,rgb(209,160,23) 52%,rgb(212,159,21) 53%,rgb(211,155,16) 54%,rgb(209,145,13) 59%,rgb(208,138,16) 61%,rgb(206,136,12) 62%,rgb(207,137,15) 62%,rgb(205,128,14) 68%,rgb(205,127,18) 70%,rgb(202,124,15) 70%,rgb(201,123,15) 72%,rgb(202,123,20) 73%,rgb(195,115,18) 79%,rgb(194,113,21) 79%,rgb(194,114,19) 80%,rgb(188,107,16) 84%,rgb(188,107,16) 89%,rgb(185,104,13) 91%,rgb(187,103,15) 91%,rgb(185,101,13) 92%,rgb(181,94,14) 94%,rgb(176,89,10) 96%,rgb(175,84,13) 97%,rgb(173,82,11) 99%,rgb(171,84,15) 99%,rgb(170,83,12) 99%,rgb(176,84,11) 99%,rgb(173,81,8) 99%,rgb(172,84,13) 99%,rgb(152,86,34) 99%,rgb(68,47,30) 100%,rgb(50,50,50) 100%,rgb(54,50,49) 100%);
+  background: linear-gradient(to bottom, rgb(50,52,49) 0%,rgb(51,49,54) 0%,rgb(54,50,49) 0%,rgb(54,52,40) 0%,rgb(207,205,180) 1%,rgb(210,208,170) 1%,rgb(211,208,163) 1%,rgb(210,206,171) 1%,rgb(210,206,168) 1%,rgb(208,206,167) 5%,rgb(207,204,171) 6%,rgb(207,204,169) 8%,rgb(207,203,174) 9%,rgb(207,203,176) 12%,rgb(209,205,180) 13%,rgb(208,204,179) 14%,rgb(205,203,178) 14%,rgb(206,204,181) 16%,rgb(204,202,179) 18%,rgb(195,195,171) 22%,rgb(192,192,168) 25%,rgb(189,191,167) 25%,rgb(187,189,165) 28%,rgb(186,191,171) 34%,rgb(187,191,174) 34%,rgb(190,194,177) 37%,rgb(191,195,172) 40%,rgb(192,193,161) 42%,rgb(195,195,161) 42%,rgb(199,189,130) 44%,rgb(208,172,60) 48%,rgb(208,172,60) 49%,rgb(209,166,38) 50%,rgb(209,160,23) 52%,rgb(212,159,21) 53%,rgb(211,155,16) 54%,rgb(209,145,13) 59%,rgb(208,138,16) 61%,rgb(206,136,12) 62%,rgb(207,137,15) 62%,rgb(205,128,14) 68%,rgb(205,127,18) 70%,rgb(202,124,15) 70%,rgb(201,123,15) 72%,rgb(202,123,20) 73%,rgb(195,115,18) 79%,rgb(194,113,21) 79%,rgb(194,114,19) 80%,rgb(188,107,16) 84%,rgb(188,107,16) 89%,rgb(185,104,13) 91%,rgb(187,103,15) 91%,rgb(185,101,13) 92%,rgb(181,94,14) 94%,rgb(176,89,10) 96%,rgb(175,84,13) 97%,rgb(173,82,11) 99%,rgb(171,84,15) 99%,rgb(170,83,12) 99%,rgb(176,84,11) 99%,rgb(173,81,8) 99%,rgb(172,84,13) 99%,rgb(152,86,34) 99%,rgb(68,47,30) 100%,rgb(50,50,50) 100%,rgb(54,50,49) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#323431', endColorstr='#363231',GradientType=0 );
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+a{
+  color: black;
+}
+a:hover{
+  text-decoration: none;
+  color: black;
+}
+.text-center{
+    text-align: center;
+}
+
+.edit-icons{
+  display: none;
+  float: right;
+}
+.mypanel:hover .edit-icons {
+  display: block;
+}
+.task-row:hover {
+  background-color: rgb(250,255,213);
+}
+.task-icon-edit{
+  display: none;
+	text-align: right;
+}
+.task-row:hover .task-icon-edit{
+  display: block;
+}
+.createtaskrow{
+  padding: 5px;
+  background-color: rgb(210,210,210);
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 25px;
+}
+.mystyleinput{
+  background-color: rgb(250,255,213);
+}
+.style-project{
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  background-color: white;
+}
+.addtodolist{
+  margin-top: 10px;
+}
+.formclass{
+  margin-top: 10px;
+}
+.edit-name,.edit-priority,.hidden{
+  display: none;
+}
+.visible{
+  display: inline-block;
+}
+input.visible{
+  color: black;
+}
+.head{
+	text-align: center;
+}
+.footered{
+	color: white;
+	text-align: center;
+	padding: 20px;
+}
+.headed{
+	text-align: center;
+/*	margin-top: 50px;*/
+	font-weight: 900;
+}
+.login_page{
+	height: 530px;
+}
+.registration_page{
+	width: 600px;
+	margin: auto;
+	
+}
+.priority{
+	float: left;
+}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"]
+{
+	line-height: 1;
+}
+/* 
+  margin: 10px - со всех сторон по 10
+  margin: 10px 20px - вертикальный и горизонтальный
+  margin: 10px 20px 30px - верх лево/право низ
+*/

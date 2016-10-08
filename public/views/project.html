@@ -1,0 +1,56 @@
+<div class="panel panel-primary mypanel style-project">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<span class="glyphicon glyphicon-th-list"></span>
+			<span
+				ng-class="{hidden: nameEditable}">
+				{{project.name}}
+			</span>
+			<input 
+				ng-keypress="saveProjectName($event, project)"
+				type="text"
+				ng-model="project.name"
+				ng-class="{visible: nameEditable,'edit-name':true}">
+			<div class="edit-icons">
+				<span
+					class="glyphicon glyphicon-pencil"
+					ng-click="changeProjectName()">
+				</span>
+				<span
+					class="glyphicon glyphicon-trash"
+					ng-click="deleteProject(project)">
+				</span>
+			</div>
+		</h4>
+	</div>   
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="input-group createtaskrow">
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-success btn-md">
+						<span class="glyphicon glyphicon-plus"></span>
+					</button>
+				</span>
+				<input type="text" class="form-control" ng-model="project.newTaskName">
+				<span class="input-group-btn">
+					<button
+						class="btn btn-success"
+						type="button"
+						ng-click="addTask(project.newTaskName, project.id)">
+						Add Task
+					</button>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="table-responsive style-project">
+	<table class="table">
+		<tr
+			tasks-directive 
+			class="task-row" 
+			ng-repeat="task in project.tasks | orderBy:'-task_priority'" 
+			task-outer="task" project-outer="project">
+		</tr>
+	</table>
+</div>

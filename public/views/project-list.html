@@ -1,0 +1,18 @@
+<h4>{{userInfo.last_name}} {{userInfo.first_name}}</h4>
+<button ng-click="outSession()">Покинуть сессию</button>
+<div ng-repeat="project in projectList" class="formclass">
+	<projects-directive project-outer="project" project-delete="deleteProject">
+	</projects-directive>
+ <!--  {{project.id}}-->
+ <!--  {{project.name}}-->
+ <!--  {{project.tasks.length}}-->
+ </div>
+ <div class="row">
+	<div class="text-center">
+		<button class="btn btn-primary addtodolist" type="button" ng-click="addProject()">
+			<span class="glyphicon glyphicon-plus"></span>Add TODO List
+		</button>
+	</div>
+ </div>
+
+

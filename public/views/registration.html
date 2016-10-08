@@ -1,0 +1,68 @@
+<div class="row registration_page">
+	<form class="form-horizontal centered_reg" role="form">
+		<div ng-class="{hidden: !error, alert:true, 'alert-danger':true}">{{error.code || error}}
+		</div>
+		<div ng-class="{hidden: !success, alert:true, 'alert-success':true}">{{success}}
+		</div>
+		<div class="col-sm-12 form-group">
+			Логин:
+			<input type="text" class="form-control mystyleinput" id="inputEmail3"
+			placeholder="Логин:" ng-model="registrationForm.login">
+			<!--логин должен быть эмаилом проверка через регул выражение-->
+		</div>
+		<div class="col-sm-12 form-group">
+			Пароль:
+			<input type="password" class="form-control mystyleinput" id="inputPassword3"
+			placeholder="Пароль" ng-model="registrationForm.password">
+			<!--пароль должен быть не менее 8 символов и должен содержать обязательно букву цифру и спецсимвол-->
+		</div>
+		<div class="col-sm-12 form-group">
+			Подтвердите пароль:
+			<input type="password" class="form-control mystyleinput" id="inputPassword4"
+			placeholder="Подтвердите пароль" ng-model="registrationForm.confirmpassword">
+			<!--должен совпадать с паролем-->
+		</div>
+		<div class="col-sm-12 form-group">
+			Фамилия:
+			<input type="text" class="form-control mystyleinput" id="input1"
+			placeholder="Фамилия" ng-model="registrationForm.lastname">
+			<!--только буквы и не менее 2 символов-->
+		</div>
+		<div class="col-sm-12 form-group">
+			Имя:
+			<input type="text" class="form-control mystyleinput" id="input2"
+			placeholder="Имя" ng-model="registrationForm.firstname">
+			<!--только буквы и не менее 2 символов-->
+		</div>
+		<div class="col-sm-12 form-group">
+			Дата Рождения:
+			<input type="date" class="form-control mystyleinput" id="input3" ng-model="registrationForm.date">
+			<!--не обязательно к заполнению-->
+		</div>
+		<div class="col-sm-offset-2 col-sm-12 form-group">
+			Пол:
+			<div class="checkbox">
+				<label>
+					<input type="radio" name="sex" ng-model="registrationForm.sex" ng-value="male">Мужской
+				</label>
+				<label>
+					<input type="radio" name="sex" ng-model="registrationForm.sex" ng-value="female">Женский
+				</label>
+			</div>
+		</div>
+		<div class="col-sm-offset-2 col-sm-9 form-group">
+			<button 
+				type="submit"
+				class="btn btn-default"
+				ng-click="sendFormRegistration(registrationForm)">Готово
+			</button>
+		</div>
+		<div class="col-sm-offset-2 col-sm-3 form-group">
+			<button 
+				type="submit"
+				class="btn btn-warning"
+				ng-click="backToLogin()">Назад
+			</button>
+		</div>
+	</form>
+</div>
