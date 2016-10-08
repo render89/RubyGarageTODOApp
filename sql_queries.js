@@ -4,8 +4,8 @@ module.exports.getProjectsList = `SELECT
 	t.id as task_id,
 	t.name as task_name,
 	t.status as task_status,
-	t.priority as task_priority,
-	t.deadline
+	t.priority as task_priority,	
+	DATE_FORMAT(t.deadline, '%Y.%m.%d') as task_deadline
  from PROJECT p
 LEFT JOIN TASKS t ON t.project_id = p.id
 WHERE p.user_id=?`;
@@ -23,7 +23,7 @@ module.exports.updateProjectById = `UPDATE PROJECT
 SET name=?
 WHERE id=?`;
 module.exports.updateTask = `UPDATE TASKS
-SET name=?, status=?, priority=?
+SET name=?, status=?, priority=?, deadline=?
 WHERE id=?`;
 module.exports.login = `SELECT * FROM USER WHERE email=? AND password=?`;
 module.exports.addUser = `INSERT INTO USER

@@ -3,7 +3,13 @@ angular.module('myApp')
 	return{
 		restrict: 'AE',
 		link: function(scope){
-			scope.task.deadline = scope.task.deadline && new Date(scope.task.deadline);
+			var date = scope.task.task_deadline && scope.task.task_deadline.split('.');
+			if (date){
+				var year = date[0];
+				var month = date[1] - 1;
+				var day = +date[2] + 1;
+				scope.task.task_deadline = new Date(year,month,day)
+			}
 			scope.changeTaskName = function(task){
 				task.nameEditable = true;
 			};
@@ -38,7 +44,8 @@ angular.module('myApp')
 				var data = {
 					name: scope.task.task_name, 
 					status: value,
-					priority: scope.task.task_priority
+					priority: scope.task.task_priority,
+					deadline: scope.task.task_deadline
 				};
 				$http.put('/api/tasks/' + scope.task.task_id, data)
 					.then(function(updated_task){
@@ -52,7 +59,8 @@ angular.module('myApp')
 				var data = {
 					name: task.task_name,
 					priority: !task.task_priority, // новое значение - value //знак восклицания - тру в фолс и наоборот
-					status: task.task_status
+					status: task.task_status,
+					deadline: task.task_deadline
 				};
 				$http.put('/api/tasks/' + scope.task.task_id, data)
 					.then(function(response){
@@ -62,6 +70,23 @@ angular.module('myApp')
 					.catch(function(error){
 						console.error(error);
 					});
+			}
+			scope.saveDeadlineTask = function(event, task){
+				var data = {
+					name: task.task_name,
+					priority: task.task_priority,
+					status: task.task_status,
+					deadline: task.task_deadline
+				}
+				if(event.keyCode == 13){
+					$http.put('/api/tasks/' + scope.task.task_id, data)
+						.then(function(response){
+							var save_deadline = response.data; 
+						})
+						.catch(function(error){
+							console.error(error);
+						});
+				}
 			}
 		},
 		scope:{

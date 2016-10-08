@@ -12,7 +12,11 @@
 		type="text" 
 		ng-model="task.task_name"
 		ng-class="{visible: task.nameEditable,'edit-name':true}">
-	<input class="pull-right" type="date" ng-model="task.deadline">
+	<input
+		ng-keypress="saveDeadlineTask($event, task)"
+		class="pull-right"
+		type="date"
+		ng-model="task.task_deadline">
 </td>
 <td class="col-xs-2">
 	<div class="priority">

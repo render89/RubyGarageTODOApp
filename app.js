@@ -106,14 +106,17 @@ app.put('/api/tasks/:id', function(req, res){
 	var new_name = req.body.name;
 	var status = req.body.status;
 	var priority = req.body.priority;
-	mysql.query(sqlQueries.updateTask, [new_name, status, priority, task_id]).then(function(sql_response){ // вместо знаков вопросов подставляет значения из массива
-		mysql.query(sqlQueries.getTask + task_id).then(function(sql_response2){
-			var task = sql_response2[0][0];
-			task.task_status = task.status;
-			task.task_priority = task.priority;
-			res.send(task);
-		});
-	});	
+	var deadline = req.body.deadline;
+	mysql.query(sqlQueries.updateTask, [new_name, status, priority, deadline, task_id]) 			
+		.then(function(sql_response){ // вместо знаков вопросов подставляет значения из массива
+			mysql.query(sqlQueries.getTask + task_id).then(function(sql_response2){
+				var task = sql_response2[0][0];
+				task.task_status = task.status;
+				task.task_priority = task.priority;
+				task.task_deadline = task.deadline;
+				res.send(task);
+			});
+		});	
 });
 app.post('/api/login', function(req, res){
 	var login = req.body.login;

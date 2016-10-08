@@ -6,7 +6,12 @@ angular.module('myApp')
 		$location.path('/');
 	};	
 	$scope.userInfo = $cookieStore.get('user');
-	$http.get('/api/projects', {params:{userId: $cookieStore.get('user').id}})
+	var data = {
+		params: {
+			userId: $cookieStore.get('user').id
+		}
+	}
+	$http.get('/api/projects', data)
 		.then(function(project_list){
 			if(Array.isArray(project_list.data)){ // проверка на массив
 			// проверка на обьект - typeof project_list === 'object'; -string -number
